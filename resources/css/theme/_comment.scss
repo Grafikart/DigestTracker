@@ -1,0 +1,43 @@
+//
+// comment.scss
+// Dashkit component
+//
+
+// Comment
+//
+// General styles
+
+.comment {
+  --#{$prefix}comment-margin-bottom: #{$comment-margin-bottom};
+  --#{$prefix}comment-body-padding-y: #{$comment-body-padding-y};
+  --#{$prefix}comment-body-padding-x: #{$comment-body-padding-x};
+  --#{$prefix}comment-body-bg: #{$comment-body-bg};
+  --#{$prefix}comment-body-border-radius: #{$comment-body-border-radius};
+  --#{$prefix}comment-body-font-size: #{$comment-body-font-size};
+  --#{$prefix}comment-time-margin-bottom: #{$comment-time-margin-bottom};
+  --#{$prefix}comment-time-font-size: #{$comment-time-font-size};
+  --#{$prefix}comment-time-color: #{$comment-time-color};
+  margin-bottom: var(--#{$prefix}comment-margin-bottom);
+}
+
+.comment-body {
+  display: inline-block;
+  padding: var(--#{$prefix}comment-body-padding-y) var(--#{$prefix}comment-body-padding-x);
+  background-color: var(--#{$prefix}comment-body-bg);
+  border-radius: var(--#{$prefix}comment-body-border-radius);
+}
+
+.comment-time {
+  display: block;
+  margin-bottom: var(--#{$prefix}comment-time-margin-bottom);
+  font-size: var(--#{$prefix}comment-time-font-size);
+  color: var(--#{$prefix}comment-time-color);
+}
+
+.comment-text {
+  font-size: var(--#{$prefix}comment-body-font-size);
+}
+
+.comment-text:last-child {
+  margin-bottom: 0;
+}

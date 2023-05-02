@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('urgency');
             $table->boolean('pain');
             $table->timestamp('date', 0);
+            $table->string('comment')->nullable();
         });
     }
 

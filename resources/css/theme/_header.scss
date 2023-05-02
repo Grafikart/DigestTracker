@@ -1,0 +1,63 @@
+//
+// header.scss
+// Dashkit component
+//
+
+// Header
+//
+// General styles
+
+.header {
+  --#{$prefix}header-margin-bottom: #{$header-margin-bottom};
+  --#{$prefix}header-spacing-y: #{$header-spacing-y};
+  --#{$prefix}header-body-border-width: #{$header-body-border-width};
+  --#{$prefix}header-body-border-color: #{$header-body-border-color};
+  --#{$prefix}header-body-border-color-dark: #{$header-body-border-color-dark};
+  margin-bottom: var(--#{$prefix}header-margin-bottom);
+}
+
+.header-img-top {
+  width: 100%; height: auto;
+}
+
+.header-body {
+  padding-top: var(--#{$prefix}header-spacing-y);
+  padding-bottom: var(--#{$prefix}header-spacing-y);
+  border-bottom: var(--#{$prefix}header-body-border-width) solid var(--#{$prefix}header-body-border-color);
+}
+
+.header.bg-dark .header-body,
+.header.bg-hero .header-body {
+  border-bottom-color: var(--#{$prefix}header-body-border-color-dark);
+}
+
+.header-footer {
+  padding-top: var(--#{$prefix}header-spacing-y);
+  padding-bottom: var(--#{$prefix}header-spacing-y);
+}
+
+.header-pretitle {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: $text-muted;
+}
+
+.header-title {
+  margin-bottom: 0;
+}
+
+.header-subtitle {
+  margin-top: map-get($spacers, 2);
+  margin-bottom: 0;
+  color: $text-muted;
+}
+
+.header-tabs {
+  margin-bottom: calc(var(--#{$prefix}header-spacing-y) * -1);
+  border-bottom-width: 0;
+
+  .nav-link {
+    padding-top: var(--#{$prefix}header-spacing-y);
+    padding-bottom: var(--#{$prefix}header-spacing-y);
+  }
+}

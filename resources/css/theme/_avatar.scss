@@ -1,0 +1,197 @@
+//
+// avatar.scss
+// Dashkit component
+//
+
+// General
+
+.avatar {
+  --#{$prefix}avatar-size-base: #{$avatar-size-base};
+  --#{$prefix}avatar-size-xs:  #{$avatar-size-xs};
+  --#{$prefix}avatar-size-sm: #{$avatar-size-sm};
+  --#{$prefix}avatar-size-lg: #{$avatar-size-lg};
+  --#{$prefix}avatar-size-xl: #{$avatar-size-xl};
+  --#{$prefix}avatar-size-xxl: #{$avatar-size-xxl};
+  --#{$prefix}avatar-title-bg: #{$avatar-title-bg};
+  --#{$prefix}avatar-title-color: #{$avatar-title-color};
+  position: relative;
+  display: inline-block;
+  width: var(--#{$prefix}avatar-size-base);
+  height: var(--#{$prefix}avatar-size-base);
+  font-size: calc(var(--#{$prefix}avatar-size-base) / 3);
+
+  // Loads mask images so they don't lag on hover
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-image: url(#{$path-to-img}/masks/avatar-status.svg), url(#{$path-to-img}/masks/avatar-group.svg),
+      url(#{$path-to-img}/masks/avatar-group-hover.svg), url(#{$path-to-img}/masks/avatar-group-hover-last.svg);
+  }
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  line-height: 0;
+  background-color: var(--#{$prefix}avatar-title-bg);
+  color: var(--#{$prefix}avatar-title-color);
+}
+
+// Status
+
+.avatar-online,
+.avatar-offline {
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+  }
+
+  .avatar-img {
+    mask-image: url(#{$path-to-img}/masks/avatar-status.svg);
+    mask-size: 100% 100%;
+  }
+}
+
+.avatar-online::before {
+  background-color: var(--#{$prefix}success);
+}
+
+.avatar-offline::before {
+  background-color: var(--#{$prefix}gray-500);
+}
+
+// Sizing
+
+.avatar-xs {
+  width: var(--#{$prefix}avatar-size-xs);
+  height: var(--#{$prefix}avatar-size-xs);
+  font-size: calc(var(--#{$prefix}avatar-size-xs) / 3);
+}
+
+.avatar-sm {
+  width: var(--#{$prefix}avatar-size-sm);
+  height: var(--#{$prefix}avatar-size-sm);
+  font-size: calc(var(--#{$prefix}avatar-size-sm) / 3);
+}
+
+.avatar-lg {
+  width: var(--#{$prefix}avatar-size-lg);
+  height: var(--#{$prefix}avatar-size-lg);
+  font-size: calc(var(--#{$prefix}avatar-size-lg) / 3);
+}
+
+.avatar-xl {
+  width: var(--#{$prefix}avatar-size-xl);
+  height: var(--#{$prefix}avatar-size-xl);
+  font-size: calc(var(--#{$prefix}avatar-size-xl) / 3);
+}
+
+.avatar-xxl {
+  width: var(--#{$prefix}avatar-size-xl);
+  height: var(--#{$prefix}avatar-size-xl);
+  font-size: calc(var(--#{$prefix}avatar-size-xl) / 3);
+
+  @include media-breakpoint-up(md) {
+    width: var(--#{$prefix}avatar-size-xxl);
+    height: var(--#{$prefix}avatar-size-xxl);
+    font-size: calc(var(--#{$prefix}avatar-size-xxl) / 3);
+  }
+}
+
+// Ratio
+
+.avatar.avatar-4by3 {
+  width: calc(var(--#{$prefix}avatar-size-base) * 4 / 3);
+}
+
+.avatar-xs.avatar-4by3 {
+  width: calc(var(--#{$prefix}avatar-size-xs) * 4 / 3);
+}
+
+.avatar-sm.avatar-4by3 {
+  width: calc(var(--#{$prefix}avatar-size-sm) * 4 / 3);
+}
+
+.avatar-lg.avatar-4by3 {
+  width: calc(var(--#{$prefix}avatar-size-lg) * 4 / 3);
+}
+
+.avatar-xl.avatar-4by3 {
+  width: calc(var(--#{$prefix}avatar-size-xl) * 4 / 3);
+}
+
+.avatar-xxl.avatar-4by3 {
+  width: calc(var(--#{$prefix}avatar-size-xxl) * 4 / 3);
+}
+
+// Group
+
+.avatar-group {
+  display: inline-flex;
+
+  // Shift every next avatar left
+
+  .avatar + .avatar {
+    margin-left: calc(var(--#{$prefix}avatar-size-base) * 0.25 * -1);
+  }
+
+  .avatar-xs + .avatar-xs {
+    margin-left: calc(var(--#{$prefix}avatar-size-xs) * 0.25 * -1);
+  }
+
+  .avatar-sm + .avatar-sm {
+    margin-left: calc(var(--#{$prefix}avatar-size-sm) * 0.25 * -1);
+  }
+
+  .avatar-lg + .avatar-lg {
+    margin-left: calc(var(--#{$prefix}avatar-size-lg) * 0.25 * -1);
+  }
+
+  .avatar-xl + .avatar-xl {
+    margin-left: calc(var(--#{$prefix}avatar-size-xl) * 0.25 * -1);
+  }
+
+  .avatar-xxl + .avatar-xxl {
+    margin-left: calc(var(--#{$prefix}avatar-size-xxl) * 0.25 * -1);
+  }
+
+  // Add some spacing between avatars
+
+  .avatar:not(:last-child) {
+    mask-image: url(#{$path-to-img}/masks/avatar-group.svg);
+    mask-size: 100% 100%;
+  }
+
+  // Bring an avatar to front on hover
+
+  .avatar:hover {
+    mask-image: none;
+    z-index: 1;
+
+    + .avatar {
+      mask-image: url(#{$path-to-img}/masks/avatar-group-hover.svg);
+      mask-size: 100% 100%;
+
+      &:last-child {
+        mask-image: url(#{$path-to-img}/masks/avatar-group-hover-last.svg);
+      }
+    }
+  }
+}

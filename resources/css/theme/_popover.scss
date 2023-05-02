@@ -1,0 +1,102 @@
+// 
+// popover.scss
+// Extended from Bootstrap
+//
+
+// 
+// Bootstrap Overrides =====================================
+//
+
+.popover {
+  --#{$prefix}popover-padding-x: #{$popover-padding-x}; 
+  --#{$prefix}popover-padding-y: #{$popover-padding-y};
+  --#{$prefix}popover-lg-max-width: #{$popover-lg-max-width};
+  --#{$prefix}popover-header-margin-bottom: #{$popover-header-margin-bottom};
+  --#{$prefix}popover-dark-bg: #{$popover-dark-bg};
+  --#{$prefix}popover-dark-border-color: #{$popover-dark-border-color};
+  --#{$prefix}popover-dark-header-bg: #{$popover-dark-header-bg};
+  --#{$prefix}popover-dark-header-color: #{$popover-dark-header-color};
+  padding: var(--#{$prefix}popover-padding-y) var(--#{$prefix}popover-padding-x);
+
+  &:hover {
+    visibility: visible !important;
+  }
+}
+
+.popover-header {
+  margin-bottom: var(--#{$prefix}popover-header-margin-bottom);
+  border-bottom: 0;
+}
+
+.popover-body-indicator {
+  display: inline-block;
+  width: .5rem;
+  height: .5rem;
+  margin-right: .25rem;
+  border-radius: 50%;
+}
+
+
+// Large 
+
+.popover-lg {
+  max-width: var(--#{$prefix}popover-lg-max-width);
+}
+
+
+// Dark
+
+.popover-dark {
+  background-color: var(--#{$prefix}popover-dark-bg);
+  border-color: var(--#{$prefix}popover-dark-border-color);
+}
+
+.popover-dark > .popover-header {
+  font-weight: $font-weight-normal;
+  background-color: var(--#{$prefix}popover-dark-header-bg);
+  color: var(--#{$prefix}popover-dark-header-color);
+}
+
+.popover-dark.bs-popover-top > .popover-arrow {
+
+  &::before {
+    border-top-color: var(--#{$prefix}popover-dark-border-color);
+  }
+
+  &::after {
+    border-top-color: var(--#{$prefix}popover-dark-bg);
+  }
+}
+
+.popover-dark.bs-popover-end > .popover-arrow {
+
+  &::before {
+    border-right-color: var(--#{$prefix}popover-dark-border-color);
+  }
+
+  &::after {
+    border-right-color: var(--#{$prefix}popover-dark-bg);
+  }
+}
+
+.popover-dark.bs-popover-bottom > .popover-arrow {
+
+  &::before {
+    border-bottom-color: var(--#{$prefix}popover-dark-border-color);
+  }
+
+  &::after {
+    border-bottom-color: var(--#{$prefix}popover-dark-bg);
+  }
+}
+
+.popover-dark.bs-popover-start > .popover-arrow {
+
+  &::before {
+    border-left-color: var(--#{$prefix}popover-dark-border-color);
+  }
+
+  &::after {
+    border-left-color: var(--#{$prefix}popover-dark-bg);
+  }
+}

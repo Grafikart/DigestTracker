@@ -1,0 +1,88 @@
+//
+// buttons.scss
+// Extended from Bootstrap
+//
+
+//
+// Bootstrap Overrides =====================================
+//
+
+// Sizing
+
+.btn-lg {
+  line-height: $btn-line-height-lg;
+}
+
+.btn-sm {
+  line-height: $btn-line-height-sm;
+}
+
+//
+// Theme ===================================
+//
+
+// Button white
+
+.btn-white {
+  --#{$prefix}btn-bg: var(--#{$prefix}white);
+  --#{$prefix}btn-border-color: var(--#{$prefix}gray-300);
+  --#{$prefix}btn-hover-bg: var(--#{$prefix}gray-100);
+  --#{$prefix}btn-hover-border-color: var(--#{$prefix}gray-400);
+  --#{$prefix}btn-active-bg: var(--#{$prefix}gray-100);
+  --#{$prefix}btn-active-border-color: var(--#{$prefix}gray-400);
+}
+
+.btn-group-toggle .btn-white:not(:disabled):not(.disabled):active,
+.btn-group-toggle .btn-white:not(:disabled):not(.disabled).active,
+.btn-group-toggle .btn-check:checked + .btn-white {
+  background-color: $input-bg;
+  border-color: $input-focus-border-color;
+  box-shadow: none;
+  color: var(--#{$prefix}primary);
+}
+
+.btn-group-toggle .btn-white:focus,
+.btn-group-toggle .btn-white.focus {
+  box-shadow: none;
+}
+
+// Button white 20
+
+.btn-white-20 {
+  --#{$prefix}btn-bg: #{rgba($white, 0.2)};
+  --#{$prefix}btn-border-color: transparent;
+  --#{$prefix}btn-color: var(--#{$prefix}white);
+  --#{$prefix}btn-hover-bg: #{rgba($white, 0.12)};
+  --#{$prefix}btn-hover-border-color: transparent;
+  --#{$prefix}btn-hover-color: var(--#{$prefix}white);
+  --#{$prefix}btn-active-bg: #{rgba($white, 0.12)};
+  --#{$prefix}btn-active-border-color: transparent;
+  --#{$prefix}btn-active-color: var(--#{$prefix}white);
+}
+
+// Button outline secondary
+
+.btn-outline-secondary {
+  &:not(:hover):not([aria-expanded='true']):not([aria-pressed='true']) {
+    border-color: var(--#{$prefix}gray-400);
+  }
+}
+
+// Button rounded
+//
+// Creates circle button variations
+
+.btn-rounded-circle {
+  width: calc(1em * #{var(--#{$prefix}btn-line-height)} + #{$input-btn-padding-y * 2} + #{var(--#{$prefix}btn-border-width)} * 2);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 50%;
+}
+
+.btn-rounded-circle.btn-lg {
+  width: calc(1em * #{$btn-line-height-lg} + #{$input-btn-padding-y-lg * 2} + #{var(--#{$prefix}btn-border-width)} * 2);
+}
+
+.btn-rounded-circle.btn-sm {
+  width: calc(1em * #{$btn-line-height-sm} + #{$input-btn-padding-y-sm * 2} + #{var(--#{$prefix}btn-border-width)} * 2);
+}

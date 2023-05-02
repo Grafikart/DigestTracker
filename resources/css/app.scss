@@ -1,0 +1,25 @@
+//
+// Theme
+//
+// Custom variables followed by theme variables followed by Bootstrap variables
+// to ensure cascade of styles.
+//
+
+// Bootstrap functions
+@import 'bootstrap/scss/functions';
+@import 'tom-select/dist/css/tom-select.bootstrap5.min.css';
+
+// Custom variables
+@import 'user-variables';
+
+// Theme variables
+@import 'theme/variables';
+
+// Bootstrap core
+@import 'bootstrap/scss/bootstrap';
+
+// Theme core
+@import 'theme/theme';
+
+// Custom core
+@import 'user';

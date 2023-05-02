@@ -1,0 +1,89 @@
+//
+// chart.scss
+// Dashkit component
+//
+
+// Chart
+//
+// General styles
+
+.chart {
+  --#{$prefix}chart-height: #{$chart-height};
+  --#{$prefix}chart-height-sm: #{$chart-height-sm};
+  --#{$prefix}chart-sparkline-width: #{$chart-sparkline-width};
+  --#{$prefix}chart-sparkline-height: #{$chart-sparkline-height};
+  position: relative;
+  height: $chart-height;
+}
+
+.chart.chart-appended {
+  height: calc(var(--#{$prefix}chart-height) - #{$chart-legend-height});
+}
+
+.chart-sm {
+  height: var(--#{$prefix}chart-height-sm);
+}
+
+.chart-sm.chart-appended {
+  height: calc(var(--#{$prefix}chart-height-sm) - var(--#{$prefix}chart-legend-height));
+}
+
+
+// Sparkline
+
+.chart-sparkline {
+  width: var(--#{$prefix}chart-sparkline-width);
+  height: var(--#{$prefix}chart-sparkline-height);
+}
+
+
+// Legend
+//
+// Custom legend
+
+.chart-legend {
+  --#{$prefix}chart-legend-margin-top: #{$chart-legend-margin-top};
+  --#{$prefix}chart-legend-font-size: #{$chart-legend-font-size};
+  --#{$prefix}chart-legend-color: #{$chart-legend-color};
+  --#{$prefix}chart-legend-height: #{$chart-legend-height};
+  display: flex;
+  justify-content: center;
+  margin-top: var(--#{$prefix}chart-legend-margin-top);
+  font-size: var(--#{$prefix}chart-legend-font-size);
+  text-align: center;
+  color: var(--#{$prefix}chart-legend-color);
+}
+
+.chart-legend-item {
+  display: inline-flex;
+  align-items: center;
+
+  + .chart-legend-item {
+    margin-left: 1rem;
+  }
+}
+
+.chart-legend-indicator {
+  display: inline-block;
+  width: .5rem;
+  height: .5rem;
+  margin-right: 0.375rem;
+  border-radius: 50%;
+}
+
+
+// Tooltip
+//
+// Custom tooltip
+
+#chart-tooltip {
+  position: absolute;
+  z-index: 0;
+}
+
+#chart-tooltip .popover-arrow {
+  position: inherit;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateX(-.5rem);
+}
