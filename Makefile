@@ -13,8 +13,8 @@ helpers:
 
 deploy:
 	ssh -A digest 'cd ~/sites/digest.droapp.com && make install'
-	# pnpm run build
-	# rsync -avz ./public/build/ digest:~/sites/digest.droapp.com/public/build/
+	pnpm run build
+	rsync -avz ./public/build/ digest:~/sites/digest.droapp.com/public/build/
 
 install:
 	git pull origin main
