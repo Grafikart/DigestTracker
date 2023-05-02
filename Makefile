@@ -10,7 +10,7 @@ helpers:
 	php artisan ide-helper:meta
 
 deploy:
-	ssh -A digest 'cd digest.droapp.com && make install'
+	ssh -A digest 'cd ~/sites/digest.droapp.com && make install'
 	# pnpm run build
 	# rsync -avz ./public/build/ digest:~/sites/digest.droapp.com/public/build/
 
