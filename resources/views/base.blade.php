@@ -39,12 +39,12 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link " href="{{ route('movements.index') }}">
+                        <a @class(['nav-link', 'active' => request()->routeIs('home')]) href="{{ route('home') }}">
                             Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="{{ route('movements.index') }}">
+                        <a @class(['nav-link', 'active' => request()->routeIs('movements.*')]) href="{{ route('movements.index') }}">
                             Mouvements
                         </a>
                     </li>
