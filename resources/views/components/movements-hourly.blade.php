@@ -12,12 +12,13 @@
                 @for($i = $firstHour; $i < $lastHour; $i++)
                     <div class="bars__column">
                         <div class="bars__wrapper">
+                            <div class="bars__total fw-bold">{{ ($hours[$i] ?? collect([]))->sum() }}</div>
                             @foreach($hours[$i] ?? [] as $name => $count)
                                 <div class="bars__bar bars__bar--{{ $name }}" style="height: {{ round($count / $max, 4) * 100 }}%"></div>
                             @endforeach
                         </div>
                         <div class="bars__label text-muted text-center">
-                            {{ str_pad($i, 2, '0') }}h
+                            {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}h
                         </div>
                     </div>
                 @endfor

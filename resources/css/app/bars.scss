@@ -19,6 +19,10 @@
   margin-bottom: 1px;
 }
 
+.bars__total {
+  flex: none;
+}
+
 $order: (
         "none" : 3,
         "moderate": 2 ,
