@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
 
         $foods = Food::factory(15)->create();
 
-        Movement::factory(400)
+        Movement::factory(500)
             ->create()
             ->each(function(Movement $movement) use ($foods) {
                 $movement->foods()->attach($foods->random($this->faker->numberBetween(1, 3)));

@@ -1,0 +1,52 @@
+.calendars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 3rem;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar__month {
+  text-transform: capitalize;
+  font-weight: bold;
+  grid-column: 1 / -1;
+}
+
+.calendar__day {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+}
+
+.calendar__dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+  background-color: #6da38a;
+}
+
+$colorList: (
+"none"  : [#6ca48c, #3c9479, #026b57, #003c28],
+"moderate"  : [#ffa043, #fc8e4d, #e47c50, #cd6a3c],
+"urgent"  : [#ff6252, #f24a3a, #a43c28, #7b0100, #6e0101],
+);
+
+@each $name, $colors in $colorList {
+  .calendar__dot--#{$name} {
+    @for $i from 1 through length($colors) {
+      &.calendar__dot--#{$i} {
+        background-color: nth($colors, $i);
+      }
+    }
+  }
+}
+@for $i from 2 through 6 {
+  .calendar__dot--#{$i} {
+    transform: scale(#{1.2 + 0.3 * $i});
+  }
+}

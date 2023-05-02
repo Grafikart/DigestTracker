@@ -1,4 +1,7 @@
-import Alpine from 'alpinejs';
+import './theme/bootstrap'
+import './theme/navbar-dropdown'
+import './theme/navbar-collapse'
+import './theme/popover'
 import TomSelect from 'tom-select'
 
 document.querySelectorAll('select[multiple]').forEach((select) => {
@@ -7,7 +10,3 @@ document.querySelectorAll('select[multiple]').forEach((select) => {
     createFilter: function(input) { return input.length >= 3 }
   })
 })
-
-window.Alpine = Alpine;
-
-Alpine.start();

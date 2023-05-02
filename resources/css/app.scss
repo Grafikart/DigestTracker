@@ -9,9 +9,6 @@
 @import 'bootstrap/scss/functions';
 @import 'tom-select/dist/css/tom-select.bootstrap5.min.css';
 
-// Custom variables
-@import 'user-variables';
-
 // Theme variables
 @import 'theme/variables';
 
@@ -21,5 +18,4 @@
 // Theme core
 @import 'theme/theme';
 
-// Custom core
-@import 'user';
+@import 'app/calendar';

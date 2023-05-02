@@ -1,72 +1,63 @@
-<!doctype html>
-<html lang="en">
-<head>
-    @yield('title')
-    @vite(['resources/css/app.scss', 'resources/js/app.js'])
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark" id="topnav">
-    <div class="container">
+@extends('empty')
 
-        <!-- Toggler -->
-        <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+@section('body')
+    <nav class="navbar navbar-expand-lg navbar-dark" id="topnav">
+        <div class="container">
 
-        <!-- User -->
-        <div class="navbar-user">
+            <!-- Toggler -->
+            <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <!-- Dropdown -->
-            <div class="dropdown">
+            <!-- User -->
+            <div class="navbar-user">
 
-                <!-- Toggle -->
-                <a href="#" class="avatar avatar-sm dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="" alt="" class="avatar-img rounded-circle">
-                </a>
+                <!-- Dropdown -->
+                <div class="dropdown">
 
-                <!-- Menu -->
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a href="" class="dropdown-item">
-                        <span class="fe fe-refresh-ccw"></span>
-                        Mouvements
+                    <!-- Toggle -->
+                    <a href="#" class="avatar avatar-sm dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <img src="/avatar.jpg" alt="" class="avatar-img rounded-circle">
                     </a>
-                    <a class="dropdown-item" href="{{ route('logout') }}">
-                        <i class="fe fe-log-out"></i>
-                        Se déconnecter
-                    </a>
+
+                    <!-- Menu -->
+                    <div class="dropdown-menu dropdown-menu-end" data-bs-popper="static">
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button href="./sign-in.html" class="dropdown-item">Se déconnecter</button>
+                        </form>
+                    </div>
+
                 </div>
 
             </div>
 
-        </div>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse mr-auto order-lg-first" id="navbar">
 
-        <!-- Collapse -->
-        <div class="collapse navbar-collapse mr-auto order-lg-first" id="navbar">
+                <!-- Navigation -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{ route('movements.index') }}">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{ route('movements.index') }}">
+                            Mouvements
+                        </a>
+                    </li>
+                </ul>
 
-            <!-- Navigation -->
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link " href="#">
-                        Établissements
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="" href="#">
-                        Publications
-                    </a>
-                </li>
-            </ul>
+            </div>
 
-        </div>
+        </div> <!-- / .container -->
+    </nav>
 
-    </div> <!-- / .container -->
-</nav>
+    <x-flash/>
 
-<x-flash/>
-
-<div class="main-content">
-    @yield('content')
-</div>
-
-</body>
-</html>
+    <div class="main-content">
+        @yield('content')
+    </div>
+@endsection

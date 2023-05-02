@@ -39,7 +39,7 @@
                             <tr>
                                 <td>
                                     <a href="{{ route('movements.edit', $movement) }}">
-                                    {{ ucfirst($movement->date->isoFormat('dddd DD MMMM à kk\h')) }}
+                                        {{ ucfirst($movement->date->isoFormat('dddd DD MMMM à kk\h')) }}
                                     </a>
                                 </td>
                                 <td>
@@ -54,8 +54,9 @@
                         @endforeach
                     </table>
                 </div>
-
-                {{ $movements->links() }}
+                <div class="px-4 pt-3">
+                    {{ $movements->links() }}
+                </div>
         </div>
     </div>
 
