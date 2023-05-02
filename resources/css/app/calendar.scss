@@ -30,12 +30,6 @@
   background-color: #6da38a;
 }
 
-$colorList: (
-"none"  : [#6ca48c, #3c9479, #026b57, #003c28],
-"moderate"  : [#ffa043, #fc8e4d, #e47c50, #cd6a3c],
-"urgent"  : [#ff6252, #f24a3a, #a43c28, #7b0100, #6e0101],
-);
-
 @each $name, $colors in $colorList {
   .calendar__dot--#{$name} {
     @for $i from 1 through length($colors) {

@@ -1,0 +1,38 @@
+.bars {
+  display: flex;
+}
+
+.bars__column {
+  flex: 1;
+}
+
+.bars__wrapper {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bars__bar {
+  width: 30px;
+  margin-bottom: 1px;
+}
+
+$order: (
+        "none" : 3,
+        "moderate": 2 ,
+        "urgent": 1
+);
+
+@each $name, $colors in $colorList {
+  .bars__bar--#{$name} {
+    background-color: nth($colors, 2);
+    order: map-get($order, $name)
+  }
+}
+
+
+
+
+

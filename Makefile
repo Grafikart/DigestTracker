@@ -1,9 +1,11 @@
-.PHONY: migrate helpers
+.PHONY: migrate helpers deploy install dev
+
+dev:
+	php artisan serve
 
 migrate:
 	php artisan migrate:fresh --seed
 
-.PHONY: helpers
 helpers:
 	php artisan ide-helper:generate
 	php artisan ide-helper:models -M

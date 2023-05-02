@@ -1,9 +1,8 @@
-//
-// Theme
-//
-// Custom variables followed by theme variables followed by Bootstrap variables
-// to ensure cascade of styles.
-//
+$colorList: (
+        "none"  : [#6ca48c, #3c9479, #026b57, #003c28],
+        "moderate"  : [#ffa043, #fc8e4d, #e47c50, #cd6a3c],
+        "urgent"  : [#ff6252, #f24a3a, #a43c28, #7b0100, #6e0101],
+);
 
 // Bootstrap functions
 @import 'bootstrap/scss/functions';
@@ -19,3 +18,4 @@
 @import 'theme/theme';
 
 @import 'app/calendar';
+@import 'app/bars';
