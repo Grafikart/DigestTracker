@@ -52,9 +52,9 @@ class Movement extends Model
         return $this->belongsToMany(Food::class);
     }
 
-    public function setFoodFromSelect(array $input)
+    public function setFoodFromSelect(?array $input)
     {
-        $ids = collect($input)
+        $ids = collect($input ?? [])
             ->map(fn (string $foodItem) => is_numeric($foodItem) ? $foodItem : Food::create(['name' => ucfirst($foodItem)])->id);
         $this->foods()->sync($ids);
     }

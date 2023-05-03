@@ -34,7 +34,7 @@
                     <x-input :value="$movement->rating" name="rating" label="Type"
                              :options="\App\Models\Movement::BRISTOL_SCALE"/>
                     <x-input :value="$movement->pain" type="checkbox" name="pain" label="Douleur abdominale"/>
-                    <x-input :value="$movement->date" type="datetime-local" name="date" label="Date"/>
+                    <x-input :value="substr($movement->date->toDateTimeLocalString(), 0, -3)" type="datetime-local" name="date" label="Date"/>
                     <x-input :value="$movement->comment" type="textarea" name="comment" label="Commentaire" />
                     <x-food-input :movement="$movement"/>
                     <div class="d-flex justify-content-between">

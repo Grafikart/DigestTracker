@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MovementFormRequest;
 use App\Models\Movement;
+use Carbon\CarbonImmutable;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 
 class MovementController extends Controller
 {
@@ -22,7 +22,7 @@ class MovementController extends Controller
     public function create()
     {
         $movement = new Movement();
-        $movement->date = new \DateTime();
+        $movement->date = CarbonImmutable::now('europe/paris');
         $movement->rating = 3;
         return view('movements.form', [
             'movement' => $movement
