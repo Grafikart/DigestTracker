@@ -9,7 +9,7 @@
         <div class="card-body">
 
             <div class="bars">
-                @for($i = $firstHour; $i < $lastHour; $i++)
+                @for($i = $firstHour; $i <= $lastHour; $i++)
                     <div class="bars__column">
                         <div class="bars__wrapper">
                             <div class="bars__total fw-bold">{{ ($hours[$i] ?? collect([]))->sum() }}</div>

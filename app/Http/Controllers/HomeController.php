@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Aggregates\MovementAverage;
 use App\Models\Aggregates\MovementDay;
-use App\Models\Aggregates\MovementHour;
 
 class HomeController extends Controller
 {
