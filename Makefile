@@ -13,8 +13,6 @@ helpers:
 
 deploy: public/build/manifest.json
 	ssh -A digest 'cd ~/sites/digest.droapp.com && git pull origin main && make install'
-	pnpm run build
-	rsync -avz ./public/build/ digest:~/sites/digest.droapp.com/public/build/
 
 install: vendor/autoload.php .env public/storage
 	php artisan cache:clear
@@ -34,3 +32,4 @@ vendor/autoload.php: composer.lock
 public/build/manifest.json: package.json
 	pnpm i
 	pnpm run build
+	rsync -avz ./public/build/ digest:~/sites/digest.droapp.com/public/build/
