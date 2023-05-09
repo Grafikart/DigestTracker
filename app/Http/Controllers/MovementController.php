@@ -36,7 +36,7 @@ class MovementController extends Controller
     {
         $movement = Movement::create($request->validated());
         $movement->setFoodFromSelect($request->input('food'));
-        return to_route('movements.index')->with('success', 'Donnée enregistrée avec succès');
+        return to_route('home')->with('success', 'Donnée enregistrée avec succès');
     }
 
     public function edit(Movement $movement)

@@ -25,6 +25,12 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="row">
+            <x-average-daily />
+        </div>
+    </div>
+
     <x-movements-hourly />
 
     <div class="container">

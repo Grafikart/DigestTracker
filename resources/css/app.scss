@@ -3,9 +3,12 @@ $colorList: (
         "moderate"  : [#ffa043, #fc8e4d, #e47c50, #cd6a3c],
         "urgent"  : [#ff6252, #f24a3a, #a43c28, #7b0100, #6e0101],
 );
+$bootstrap-icons-font-dir: "/fonts";
 
 // Bootstrap functions
 @import 'bootstrap/scss/functions';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
 @import 'tom-select/dist/css/tom-select.bootstrap5.min.css';
 
 // Theme variables
