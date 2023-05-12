@@ -32,6 +32,7 @@
                         <tr>
                             <th>Date</th>
                             <th>Urgence</th>
+                            <th>Bristol</th>
                             <th class="text-end">Actions</th>
                         </tr>
                         </thead>
@@ -45,6 +46,7 @@
                                 <td>
                                     <x-urgency-badge :level="$movement->urgency"></x-urgency-badge>
                                 </td>
+                                <td class="text-muted">{{ $movement->rating }}</td>
                                 <td class="text-end">
                                     <a href="{{ route('movements.edit', $movement) }}" class="text-muted">
                                         <i class="bi bi-pencil-square"></i>

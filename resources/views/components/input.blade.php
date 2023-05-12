@@ -13,7 +13,7 @@
     @if($options)
         <select class="form-select @error($name) is-invalid @enderror" type="{{ $type }}" id="{{ $name }}" name="{{ $name }}" value="{{ old($name, $value) }}">
             @foreach($options as $k => $v)
-            <option value="{{ $k }}" @selected(old($name, $value) === $k)>{{ $v }}</option>
+            <option value="{{ $k }}" @selected(old($name, $value) == $k)>{{ $v }}</option>
             @endforeach
         </select>
     @elseif($type === 'textarea')
