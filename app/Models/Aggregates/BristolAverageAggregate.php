@@ -21,9 +21,9 @@ class BristolAverageAggregate
     }
 
     public function __construct(
-        float $average
+        ?float $average
     ) {
-        $this->average = round($average, 2) ;
+        $this->average = round($average ?? 0, 2) ;
     }
 
 }
